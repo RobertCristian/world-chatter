@@ -10,13 +10,5 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('ws', function() {
-    $event = new App\Events\MessageSent('1','2', 6);
-    dd(broadcast($event));
-});
 
 Route::view('/{path?}', 'app');
-
-//Route::get('/', function () {
-//    return view('welcome');
-//});

@@ -11,12 +11,12 @@
 |
 */
 
-//Route::get('test', 'Api\ChatRoomController@test');
-
 Route::apiResource('chatroom', 'Api\ChatRoomController')->only([
     'index', 'store', 'show'
 ]);
+
 Route::post('chatroom/search', 'Api\ChatRoomController@search');
+
 Route::apiResource('chatroom/messages', 'Api\ChatRoomMessagesController')->only([
     'store'
 ]);
