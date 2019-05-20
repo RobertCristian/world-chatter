@@ -54,7 +54,7 @@ export default class App extends Component {
         const profile_name = e.target.value;
 
         await this.setState({
-            profile_name: profile_name
+            profile_name: profile_name.length > 0 ? profile_name : null
         });
 
         localStorage.setItem('profile_name', profile_name);
@@ -141,15 +141,22 @@ export default class App extends Component {
     };
 
     mapMarkerClickHandler = async (e) => {
-        if (this.state.goToChat && this.state.goToChat > 0) {
+        const {profile_name} = this.state;
+        const goToChat = e.target.options.id;
+
+        if ((goToChat && goToChat > 0) && (profile_name && profile_name.length > 0)) {
             await this.setState({
                 goToChat: null
             });
-        }
 
-        await this.setState({
-            goToChat: e.target.options.id
-        })
+            await this.setState({
+                goToChat: goToChat
+            })
+        } else {
+            this.setState({
+                error: 'Please enter a name first'
+            });
+        }
     };
 
     clearGoToChat = async () => {
@@ -186,6 +193,7 @@ export default class App extends Component {
             }
         } else {
             overlay = <SmallOverlay
+                error={error}
                 profile_name={profile_name}
                 onChangeValue={this.onNameInputChange}
                 startChatting={this.startChattingBtnHandler}/>

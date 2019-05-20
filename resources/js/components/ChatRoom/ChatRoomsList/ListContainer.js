@@ -14,7 +14,7 @@ export default function ListContainer(props) {
     return <div className="overlay_expanded__card">
         <div className="d-flex justify-content-around mb-4">
             <Input className="overlay_expanded__input" type="text" onChange={onSearchValueChange}
-                   defaultValue={searchValue} disabled={markers.length < 1}/>
+                   defaultValue={searchValue}/>
             <Button className="btn btn-default btn-circle" onClick={newChatBtnHandler}
                     icon={<i className="fas fa-plus-circle"></i>}/>
         </div>

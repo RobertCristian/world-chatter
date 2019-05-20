@@ -1,11 +1,13 @@
 import React from 'react';
 import {Button, Input} from '../Shared'
+import Error from "../Error";
 
 export default function SmallOverlay(props) {
     const {
         profile_name,
         startChatting,
-        onChangeValue
+        onChangeValue,
+        error
     } = props;
 
     return (
@@ -20,8 +22,10 @@ export default function SmallOverlay(props) {
                 onKeyDown={startChatting}
             />
 
-            <Button onClick={startChatting} className="btn btn-dark"
+            <Button onClick={startChatting} className="btn btn-dark mb-2"
                     buttonText="Start Chatting" disabled={!profile_name || (profile_name && profile_name.length < 1)}/>
+
+            <Error error={error}/>
         </div>
     )
 }
