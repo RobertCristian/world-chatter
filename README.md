@@ -10,7 +10,7 @@ In the project directory, run:
 
 `npm install`
 
-Make sure to add your Pusher API key and update other necessary info like DB .env and run:
+Make sure to add your Pusher API key in `.env` and `resources/js/bootstrap.js`.Also update other necessary info like DB info and run:
 
 `npm run dev`
 
