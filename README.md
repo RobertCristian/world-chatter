@@ -2,7 +2,7 @@
 
 Create a chat room anwyerhere on a map and talk with other people!
 
-## Instalation
+## Installation
 
 In the project directory, run:
 
