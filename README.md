@@ -1,6 +1,6 @@
 # world-chatter
 
-Create a chat room anwyerhere on a map and talk with other people!
+Create a chat room anwyerhere on a map and talk with other people! Made With Laravel and React.
 
 ## Installation
 
