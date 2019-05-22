@@ -10,6 +10,8 @@ In the project directory, run:
 
 `npm install`
 
+`php artisan key:generate`
+
 Make sure to add your Pusher API key in `.env` and `resources/js/bootstrap.js`.Also update other necessary info like DB info and run:
 
 `npm run dev`
